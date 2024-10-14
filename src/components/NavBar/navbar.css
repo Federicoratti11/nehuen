@@ -1,0 +1,30 @@
+.navbar {
+    width: 100%; /* Ocupa el 100% del ancho de la pantalla */
+    background-color: #cde5bf; /* Color de fondo */
+    color: white; /* Color del texto */
+    display: flex; /* Usamos Flexbox para alinear los elementos */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 15px 20px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para un efecto de profundidad */
+    z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+    margin-bottom: 50px;
+}
+
+.navbar a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina subrayado */
+    margin: 0 15px; /* Espacio entre los enlaces */
+}
+
+.navbar a:hover {
+    scale: 1.2;
+    color: green;
+}
+
+
+.cartwidget{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
