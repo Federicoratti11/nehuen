@@ -79,6 +79,15 @@ const products = [
     categoria: "verdura",
     imagen:"/img/zanahoria.png",
     descripcion: "Zanahorias crujientes y dulces, perfectas para comer solas, en ensaladas o en jugos."
+  },
+  {
+    id: "10",
+    nombre: "Zanahoria",
+    precio: 970,
+    stock: 140,
+    categoria: "verdura",
+    imagen:"/img/zanahoria.png",
+    descripcion: "Zanahorias crujientes y dulces, perfectas para comer solas, en ensaladas o en jugos."
   }
 ];
 
