@@ -52,3 +52,38 @@
     color: #666;
     line-height: 1.6;
   }
+
+
+  .product-image-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .product-image-container .secondary-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px; /* Ajusta el ancho para que se vea acorde al diseño */
+    margin-right: 10px; /* Espacio entre las imágenes secundarias y la principal */
+  }
+  
+  .product-image-container .secondary-images img {
+    width: 80px;
+    height: 80px;
+    margin: 5px 0;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .product-image-container .main-image {
+    width: 240px; /* Ancho de la imagen principal */
+    height: 240px; /* Altura de la imagen principal */
+  }
+  
+  .product-image-container .main-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  

@@ -3,10 +3,20 @@ import "./itemDetailContainer.css"
 import { getProduct } from '../data/data'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
 
 const ItemDetailContainer = () => {
     const [product, setProducts] = useState ({})
+    const {addProductInCart} = useContext(CartContext)
     const {idProduct} = useParams ()
+
+const addProduct = (count) => {
+const productCart = {...product, quantity : count}
+addProductInCart(productCart)
+}
+
+
     useEffect(() => {
         getProduct(idProduct)
         .then((data) => setProducts(data))
@@ -14,7 +24,7 @@ const ItemDetailContainer = () => {
 
 
   return (
-    <ItemDetail product={product}/>
+    <ItemDetail product={product}  addProduct={addProduct} />
   )
 }
 
