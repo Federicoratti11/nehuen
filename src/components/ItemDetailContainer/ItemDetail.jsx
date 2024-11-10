@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 
-const ItemDetail = ({ product, addProduct }) => {
+const ItemDetail = ({ product, addProduct, hideItemCount }) => {
   // Verificar si product y product.imagen están definidos antes de usarlos
   const [currentImage, setCurrentImage] = useState(product?.imagen?.[0] || '');
 
@@ -31,7 +32,16 @@ const ItemDetail = ({ product, addProduct }) => {
     <div className="product-detail-content">
       <h2 className="product-detail-title">{product.nombre}</h2>
       <p className="product-detail-price">Precio: ${product.precio}</p>
-      <ItemCount stock={product.stock}   addProduct={addProduct} />
+      {
+        hideItemCount === true ? (
+          <Link to="/cart" >Terminar mi compra</Link> 
+        ) : (
+
+          <ItemCount stock={product.stock}   addProduct={addProduct} />
+
+        )
+      }
+  
       <p className="product-detail-description">{product.descripcion}</p>
     </div>
   </div>

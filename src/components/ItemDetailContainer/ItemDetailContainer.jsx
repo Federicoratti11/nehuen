@@ -8,12 +8,15 @@ import { CartContext } from '../../context/CartContext'
 
 const ItemDetailContainer = () => {
     const [product, setProducts] = useState ({})
+    const [hideItemCount, setHideItemCount] = useState (false)
     const {addProductInCart} = useContext(CartContext)
     const {idProduct} = useParams ()
 
 const addProduct = (count) => {
 const productCart = {...product, quantity : count}
 addProductInCart(productCart)
+//muestra el boton finalizar compra
+setHideItemCount(true)
 }
 
 
@@ -24,7 +27,7 @@ addProductInCart(productCart)
 
 
   return (
-    <ItemDetail product={product}  addProduct={addProduct} />
+    <ItemDetail product={product}  addProduct={addProduct}   hideItemCount={hideItemCount} />
   )
 }
 

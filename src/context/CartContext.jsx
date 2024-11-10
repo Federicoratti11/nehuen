@@ -40,6 +40,10 @@ const deleteProductInCart = (idProduct) => {
     setCart(productsFilter)
 }
 
+  //funcion para vaciar el carrito
+  const deleteCart = () => {
+    setCart([])
+  }
 
 //funcionar para precio total de la compra
 const totalPrecio = () => {
@@ -48,7 +52,7 @@ const totalPrecio = () => {
 }
 
     return(
-        <CartContext.Provider value={{cart , addProductInCart, totalQuantity, totalPrecio, deleteProductInCart}}>
+        <CartContext.Provider value={{cart , addProductInCart, totalQuantity, totalPrecio, deleteProductInCart, deleteCart}}>
             {children}
         </CartContext.Provider>
 

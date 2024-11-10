@@ -1,9 +1,20 @@
 import { useContext } from "react";
 import {CartContext} from "../../context/CartContext"
 import "./CartContainer.css"
+import { Link } from "react-router-dom";
 
 const CartContainer = ( ) => {
-    const {cart, totalPrecio, deleteProductInCart} = useContext(CartContext)
+    const {cart, totalPrecio, deleteProductInCart, deleteCart} = useContext(CartContext)
+
+
+    if(cart.length === 0){
+        return(
+            <div>
+                <h2>No hay productos agregados!!</h2>
+                <Link to="/" >volver al inicio</Link>
+            </div>
+        )
+    }
 
     return(
         <div>
@@ -21,6 +32,7 @@ const CartContainer = ( ) => {
                 ))
             }
             <p>Precio total: {totalPrecio()} </p>
+            <button onClick={deleteCart}> vaciar carrito</button>
 
         </div>
     )

@@ -11,7 +11,7 @@ const CartWidget = () => {
 
   return (
     <Link to="/cart" className='cartwidget' >
-        <p>{totalQuantity()}</p>
+        <p>{totalQuantity() >=1 && totalQuantity()}</p>
       <BsBasket2Fill size={30}/>
     </Link>
   )
