@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import "./itemDetailContainer.css"
-import { getProduct } from '../data/data'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
+import { doc, getDoc } from 'firebase/firestore'
+import db from '../../db/db'
 
 const ItemDetailContainer = () => {
     const [product, setProducts] = useState ({})
@@ -20,9 +21,25 @@ setHideItemCount(true)
 }
 
 
+const getProduct = () => {
+  const docRef = doc(db, "products", idProduct);
+  getDoc(docRef)
+    .then((dataDb) => {
+      if (dataDb.exists()) {
+        const productDb = { id: dataDb.id, ...dataDb.data() };
+        setProducts(productDb);
+      } else {
+        console.log("No such document!");
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching document:", error);
+    });
+};
+
+
     useEffect(() => {
-        getProduct(idProduct)
-        .then((data) => setProducts(data))
+      getProduct()
     }, [idProduct])
 
 
