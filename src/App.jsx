@@ -6,7 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext.jsx";
 import CartContainer from "./components/CartContainer/CartContainer.jsx";
 import Checkout from "./components/checkout/Checkout.jsx";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
         <CartProvider>
           <NavBar />
+          <ToastContainer theme="dark" />
 
           <Routes>
             <Route
@@ -28,10 +30,12 @@ function App() {
                 <ItemListContainer greeting={"Bienvenidos a Nehuen organico"} />
               }
             />
-            <Route path="/detalle/:idProduct" element={<ItemDetailContainer />} />
+            <Route
+              path="/detalle/:idProduct"
+              element={<ItemDetailContainer />}
+            />
             <Route path="/cart" element={<CartContainer />} />
             <Route path="/checkout" element={<Checkout />} />
-           
           </Routes>
         </CartProvider>
       </BrowserRouter>
