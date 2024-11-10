@@ -1,8 +1,9 @@
 import React from 'react'
+import "./Checkout.css"
 
 const FormCheckout = ({dataForm, handleChangeInput, handleSubmitForm}) => {
   return (
-    <form onSubmit={ handleSubmitForm} >
+    <form onSubmit={ handleSubmitForm} className="order-form">
     <label>Nombre completo</label>
     <input type="text" name="fullname" value={dataForm.fullname} onChange={handleChangeInput}  />
 

@@ -23,6 +23,7 @@ const ItemDetail = ({ product, addProduct, hideItemCount }) => {
       {
         hideItemCount === true ? (
           <Link to="/cart" >Terminar mi compra</Link> 
+          
         ) : (
 
           <ItemCount stock={product.stock}   addProduct={addProduct} />
@@ -31,6 +32,8 @@ const ItemDetail = ({ product, addProduct, hideItemCount }) => {
       }
   
       <p className="product-detail-description">{product.descripcion}</p>
+      <Link to="/" >Volve al inicio</Link> 
+
     </div>
   </div>
   )

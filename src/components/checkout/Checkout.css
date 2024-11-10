@@ -1,0 +1,63 @@
+.order-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo para las etiquetas */
+.order-form label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4CAF50; /* Verde claro */
+}
+
+/* Estilo para los inputs */
+.form-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #d1d1d1; /* Borde sutil */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Fondo gris suave */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo para los inputs cuando tienen foco */
+.form-input:focus {
+    border-color: #4CAF50; /* Borde verde */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); /* Sombra verde suave */
+    outline: none;
+}
+
+/* Estilo para el botón de envío */
+.submit-btn {
+    padding: 12px 20px;
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover para el botón */
+.submit-btn:hover {
+    background-color: #45a049; /* Verde más oscuro */
+}
+
+/* Estilo para el contenedor del formulario */
+.order-form .form-input {
+    width: 100%;
+}
+
+.submit-btn {
+    align-self: center; /* Centra el botón */
+}
