@@ -28,11 +28,7 @@ function App() {
                 <ItemListContainer greeting={"Bienvenidos a Nehuen organico"} />
               }
             />
-            <Route
-              path="/detalle/:idProduct"
-              element={<ItemDetailContainer />}
-            />
-
+            <Route path="/detalle/:idProduct" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<CartContainer />} />
             <Route path="/checkout" element={<Checkout />} />
            

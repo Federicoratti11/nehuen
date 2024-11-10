@@ -4,6 +4,7 @@ import "./Checkout.css"
 const FormCheckout = ({dataForm, handleChangeInput, handleSubmitForm}) => {
   return (
     <form onSubmit={ handleSubmitForm} className="order-form">
+    <h1>Finaliza tu compra</h1>
     <label>Nombre completo</label>
     <input type="text" name="fullname" value={dataForm.fullname} onChange={handleChangeInput}  />
 
@@ -12,6 +13,8 @@ const FormCheckout = ({dataForm, handleChangeInput, handleSubmitForm}) => {
 
     <label>Email</label>
     <input type="text" name="email" value={dataForm.email} onChange={handleChangeInput} />  
+
+    
 
     <button type="submit"> Enviar orden</button>
 
